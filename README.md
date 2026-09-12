@@ -4,6 +4,10 @@ A free, modern, and customizable random wheel picker and name spinner built with
 
 Create interactive spinning wheels for making random decisions, selecting names, choosing winners, playing games, and much more.
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Spinawheel.net-blue?style=for-the-badge)](https://spinawheel.net/)
+[![License](https://img.shields.io/github/license/RealTabbukhan/spin-a-wheel)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/RealTabbukhan/spin-a-wheel?style=social)](https://github.com/RealTabbukhan/spin-a-wheel/stargazers)
+
 ## 🌐 Live Demo
 
 Try the online version of Spin a Wheel:
