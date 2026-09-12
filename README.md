@@ -1,49 +1,110 @@
-# Spin a Wheel 🎡
+# 🎡 Spin a Wheel
 
-A free, modern, fast, and customizable random name picker and wheel spinner web application. Built with HTML5 Canvas, Vanilla CSS, and Node.js/Express.
+A free, modern, and customizable random wheel picker and name spinner built with HTML5 Canvas, Vanilla JavaScript, CSS, and Node.js/Express.
 
-## Features
+Create interactive spinning wheels for making random decisions, selecting names, choosing winners, playing games, and much more.
 
-- 🎡 **Smooth Canvas Wheel Engine** — Responsive high-DPI rendering with realistic deceleration physics.
-- 🎯 **Multiple Wheels** — Spin up to 6 wheels simultaneously or individually.
-- ⚖️ **Weighted Probability** — Assign custom weights to individual entries.
-- 🎨 **Custom Color Palettes** — Multiple built-in themes and per-entry custom color picker.
-- 🔊 **Sound Effects** — Realistic ticking and celebration sound synthesizers using the Web Audio API.
-- 🌓 **Dark & Light Modes** — Sleek glassmorphic interface with one-click theme switching.
-- 💾 **Local Storage & Library** — Save, load, and manage your wheels locally in your browser.
-- 🔗 **Shareable Wheels** — Generate instant share links encoded with your wheel entries.
-- 🔒 **Privacy-First** — All data runs locally in the browser with no tracking, no ads, and no external analytics.
+## 🌐 Live Demo
 
-## Getting Started
+Try the online version of Spin a Wheel:
 
-### Prerequisites
+👉 **[Spinawheel.net – Free Online Wheel Picker](https://spinawheel.net/)**
 
-- [Node.js](https://nodejs.org/) (v20 or higher recommended)
+Spin a wheel instantly in your browser without downloading software or creating an account.
+
+---
+
+## 📸 Screenshots
+
+### Spin a Wheel Online
+
+![Spin a Wheel Screenshot](https://spinawheel.net/)
+
+> Visit [Spinawheel.net](https://spinawheel.net/) to try the interactive online wheel picker.
+
+---
+
+## ✨ Features
+
+### 🎡 Interactive Wheel Spinner
+
+A smooth HTML5 Canvas-based wheel engine with realistic spinning and deceleration effects.
+
+### 🎯 Multiple Wheels
+
+Create and manage multiple wheels. Spin up to 6 wheels simultaneously or individually.
+
+### ⚖️ Weighted Probability
+
+Assign custom weights to individual entries to control their selection probability.
+
+### 🎨 Custom Color Palettes
+
+Choose from multiple built-in themes or customize the colors of individual wheel entries.
+
+### 🔊 Sound Effects
+
+Enjoy realistic ticking sounds and celebration effects using the Web Audio API.
+
+### 🌙 Dark & Light Modes
+
+Switch between dark and light themes with a single click.
+
+### 💾 Local Storage & Wheel Library
+
+Save, load, and manage your wheels locally in your browser.
+
+### 🔗 Shareable Wheels
+
+Generate instant share links containing your wheel entries.
+
+### 🔒 Privacy-Focused
+
+Wheel data is processed locally in the browser. No tracking or external analytics are required to use the wheel.
+
+---
+
+## 🚀 Use Cases
+
+Spin a Wheel can be used for:
+
+- Random name selection
+- Classroom activities
+- Giveaway and contest winners
+- Team selection
+- Random decision-making
+- Party games
+- Restaurant and food selection
+- Daily challenges
+- Educational activities
+- Online raffles and lucky draws
+
+---
+
+## 🛠️ Technologies Used
+
+- **HTML5 Canvas** – Interactive wheel rendering
+- **JavaScript** – Wheel logic and functionality
+- **CSS3** – Responsive design and styling
+- **Node.js** – JavaScript runtime
+- **Express.js** – Web application server
+- **Web Audio API** – Sound effects
+- **Local Storage** – Saving wheel data locally
+
+---
+
+## 📋 Prerequisites
+
+Before installing this project, make sure you have:
+
+- [Node.js](https://nodejs.org/) version 20 or higher
 - npm
 
-### Installation
+---
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/RealTabbukhan/spin-a-wheel.git
-   cd spin-a-wheel
-   ```
+## ⚙️ Installation
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 1. Clone the repository
 
-3. Start the application:
-   ```bash
-   npm run dev
-   ```
-
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+```bash
+git clone https://github.com/RealTabbukhan/spin-a-wheel.git
