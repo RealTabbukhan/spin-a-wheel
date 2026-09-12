@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title><%= title %></title>
+<meta name="description" content="<%= description %>">
+
+<!-- SEO & Browser Meta Tags -->
+<meta name="keywords" content="<%= typeof keywords !== 'undefined' ? keywords : 'spin the wheel, random name picker, wheel spinner, decision maker' %>">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= description %>">
+<meta property="og:image" content="/images/og-screenshot.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= description %>">
+<meta name="twitter:image" content="/images/og-screenshot.png">
+
+<!-- Favicon & Icons -->
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#0a0e27" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f0f4ff" media="(prefers-color-scheme: light)">
+
+<!-- Preconnect & Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap">
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="/css/style.css" as="style">
+<link rel="preload" href="/images/logo.png" as="image">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/css/style.css">

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <%- include('partials/header') %>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="/" class="nav-brand">
+      <img src="/images/logo.png" alt="SpinAWheel Logo" class="nav-logo" width="34" height="34">
+      <span class="nav-title">SpinAWheel</span>
+    </a>
+    <div class="nav-actions">
+      <button id="new-wheel-btn" class="nav-btn" title="New Wheel" aria-label="Create a new wheel">🆕</button>
+      <button id="save-wheel-btn" class="nav-btn" title="Save Wheel Locally" aria-label="Save wheel">💾</button>
+      <button id="library-btn" class="nav-btn" title="My Saved Wheels" aria-label="Library">📂</button>
+      <button id="theme-toggle" class="nav-btn" title="Toggle theme" aria-label="Toggle dark/light theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button id="sound-toggle" class="nav-btn active" title="Toggle sound" aria-label="Toggle sound effects">
+        <span class="sound-icon">🔊</span>
+      </button>
+      <button id="share-btn" class="nav-btn" title="Share this wheel" aria-label="Share wheel">🔗</button>
+      <button id="panel-toggle-btn" class="nav-btn" title="Hide/Show Panel" aria-label="Toggle panel">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="15" y1="3" x2="15" y2="21"></line></svg>
+      </button>
+      <button id="fullscreen-btn" class="nav-btn" title="Fullscreen" aria-label="Toggle fullscreen">⛶</button>
+    </div>
+  </nav>
+
+  <!-- Main Spinner Layout -->
+  <main class="spinner-layout" id="spinner-layout">
+
+    <!-- Wheel Section — dynamic grid of all wheels -->
+    <section class="wheel-section" aria-label="Spinning wheels">
+      <div class="wheels-grid" id="wheels-grid" data-count="1">
+        <!-- Wheel cards rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Entries Panel -->
+    <aside class="entries-panel" id="entries-panel">
+      <!-- Per-wheel tabs + Results -->
+      <div class="panel-tabs" id="panel-tabs">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- ═══ Sub-tabs: List | Text | Style | Sound ═══ -->
+      <div class="sub-tabs" id="sub-tabs">
+        <div class="sub-tabs-group">
+          <button class="sub-tab active" data-subtab="list">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg>
+            List
+          </button>
+          <button class="sub-tab" data-subtab="text">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+            Text
+          </button>
+          <button class="sub-tab" data-subtab="style">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+            Style
+          </button>
+          <button class="sub-tab" data-subtab="sound">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg>
+            Sound
+          </button>
+        </div>
+        <div class="sub-tabs-actions">
+          <button class="sub-tab-action-btn add-entry-btn" id="add-entry-btn" title="Add entry">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+          <button class="sub-tab-action-btn more-actions-btn" id="more-actions-btn" title="More actions">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ═══ LIST sub-tab content ═══ -->
+      <div class="sub-tab-content active" id="subtab-list">
+        <div class="entry-list-header">
+          <span class="elh-check">
+            <input type="checkbox" id="select-all-entries" class="entry-checkbox" aria-label="Select all entries">
+          </span>
+          <span class="elh-name">Entries</span>
+          <span class="elh-delete"></span>
+          <span class="elh-weight">Weight</span>
+          <span class="elh-pct">%</span>
+          <span class="elh-color">Color</span>
+          <span class="elh-actions"></span>
+        </div>
+        <div class="entry-list-body" id="entry-list-body">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+      <!-- ═══ TEXT sub-tab content ═══ -->
+      <div class="sub-tab-content" id="subtab-text">
+        <textarea
+          class="entries-textarea"
+          id="entries-input"
+          placeholder="Enter items, one per line…&#10;&#10;Example:&#10;Pizza&#10;Burger&#10;Sushi&#10;Tacos&#10;Pasta"
+          spellcheck="false"
+          aria-label="Enter wheel items, one per line"
+        ></textarea>
+      </div>
+
+      <!-- ═══ STYLE sub-tab content ═══ -->
+      <div class="sub-tab-content" id="subtab-style">
+        <div class="style-panel">
+          <div class="style-section">
+            <label class="style-label">Color Palette</label>
+            <div class="palette-grid" id="palette-grid">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+          </div>
+          <div class="style-section">
+            <label class="style-label" for="font-size-slider">Wheel Text Size</label>
+            <div class="slider-row">
+              <span class="slider-label-sm">A</span>
+              <input type="range" id="font-size-slider" min="0" max="2" step="1" value="1" class="styled-slider">
+              <span class="slider-label-lg">A</span>
+              <span class="slider-value" id="font-size-value">Medium</span>
+            </div>
+          </div>
+          <div class="style-section">
+            <label class="style-label" for="spin-speed-slider">Spin Speed</label>
+            <div class="slider-row">
+              <span class="slider-label-sm">🐢</span>
+              <input type="range" id="spin-speed-slider" min="1" max="3" step="1" value="2" class="styled-slider">
+              <span class="slider-label-lg">🐇</span>
+              <span class="slider-value" id="spin-speed-value">Normal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ SOUND sub-tab content ═══ -->
+      <div class="sub-tab-content" id="subtab-sound">
+        <div class="sound-panel">
+          <div class="style-section">
+            <label class="style-label">Tick Sound (while spinning)</label>
+            <div class="sound-presets" id="tick-sound-presets">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          <div class="style-section">
+            <label class="style-label">Win Sound (on result)</label>
+            <div class="sound-presets" id="win-sound-presets">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          <div class="style-section">
+            <label class="style-label" for="volume-slider">Volume</label>
+            <div class="slider-row">
+              <span class="slider-label-sm">🔈</span>
+              <input type="range" id="volume-slider" min="0" max="100" step="5" value="70" class="styled-slider">
+              <span class="slider-label-lg">🔊</span>
+              <span class="slider-value" id="volume-value">70%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entries Tab (kept for compatibility, hidden by default) -->
+      <div class="tab-content" id="entries-tab" style="display:none;"></div>
+
+      <!-- Results Tab -->
+      <div class="tab-content" id="results-tab">
+        <div class="results-list" id="results-list"></div>
+        <div class="entries-controls" style="border-top:1px solid var(--border);border-bottom:none;">
+          <button class="control-btn" id="clear-results-btn">🗑️ Clear Results</button>
+        </div>
+      </div>
+
+      <!-- Stats Tab -->
+      <div class="tab-content" id="stats-tab">
+        <div class="stats-container" id="stats-container">
+          <p style="text-align:center;color:var(--text-muted);padding:24px;font-size:0.9rem;">Spin the wheel to see stats!</p>
+        </div>
+      </div>
+
+      <!-- Wheel Management -->
+      <div class="wheel-management" id="wheel-management">
+        <div class="management-row">
+          <button class="btn btn-primary management-btn" id="spin-all-btn">🔄 Spin all wheels</button>
+          <button class="btn btn-secondary management-btn" id="add-wheel-btn">+ Add wheel</button>
+        </div>
+        <div class="management-row">
+          <button class="btn btn-secondary management-btn" id="rename-wheel-btn">✏️ Rename</button>
+          <button class="btn btn-ghost management-btn" id="remove-wheel-btn">🗑️ Remove</button>
+        </div>
+      </div>
+
+      <!-- ═══ More Actions Dropdown ═══ -->
+      <div class="dropdown-menu hidden" id="more-actions-dropdown">
+        <button class="dropdown-item" data-action="shuffle">🔀 Shuffle</button>
+        <button class="dropdown-item" data-action="sort">↕️ Sort A–Z</button>
+        <button class="dropdown-item" data-action="remove-dupes">🧹 Remove duplicates</button>
+        <button class="dropdown-item" data-action="reset-weights">⚖️ Reset all weights</button>
+        <button class="dropdown-item" data-action="reset-colors">🎨 Reset all colors</button>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item danger" data-action="clear">🗑️ Clear all entries</button>
+      </div>
+
+      <!-- ═══ Color Picker Popover ═══ -->
+      <div class="color-picker-popover hidden" id="color-picker-popover">
+        <div class="color-picker-grid" id="color-picker-grid">
+          <!-- Rendered dynamically -->
+        </div>
+        <button class="color-picker-reset" id="color-picker-reset">Reset to auto</button>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- Winner Modal -->
+  <div class="modal hidden" id="winner-modal" role="dialog" aria-labelledby="winner-title" aria-modal="true">
+    <div class="modal-overlay" id="winner-overlay"></div>
+    <div class="winner-modal-box">
+      <div class="winner-modal-header">
+        <h2 id="winner-title">We have a winner!</h2>
+      </div>
+      <div class="winner-modal-body">
+        <p class="winner-name" id="winner-name"></p>
+      </div>
+      <div class="winner-modal-footer">
+        <button class="winner-btn-ghost" id="close-modal-btn">Close</button>
+        <button class="winner-btn-primary" id="remove-spin-btn">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Modal -->
+  <div class="modal hidden" id="share-modal" role="dialog" aria-labelledby="share-title" aria-modal="true">
+    <div class="modal-overlay" id="share-overlay"></div>
+    <div class="modal-content share-content">
+      <h2 id="share-title">🔗 Share This Wheel</h2>
+      <div class="share-url-container">
+        <input type="text" class="share-url-input" id="share-url" readonly aria-label="Shareable URL">
+        <button class="btn btn-primary" id="copy-url-btn">📋 Copy</button>
+      </div>
+      <p class="share-note">Anyone with this link can open your wheel — no account needed!</p>
+      <button class="btn btn-ghost" id="close-share-btn">Close</button>
+    </div>
+  </div>
+
+  <!-- Library Modal -->
+  <div class="modal hidden" id="library-modal" role="dialog" aria-labelledby="library-title" aria-modal="true">
+    <div class="modal-overlay" id="library-overlay"></div>
+    <div class="modal-content library-content">
+      <h2 id="library-title">📂 My Saved Wheels</h2>
+      <div class="library-list" id="library-list">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+      <button class="btn btn-ghost" id="close-library-btn">Close</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="/js/sounds.js"></script>
+  <script src="/js/wheel.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

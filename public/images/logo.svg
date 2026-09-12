@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer ring -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="url(#glow)" stroke-width="2.5" opacity="0.6"/>
+  <!-- Segments -->
+  <path d="M32,32 L32,2 A30,30 0 0,1 57.98,17 Z" fill="#FF6B6B"/>
+  <path d="M32,32 L57.98,17 A30,30 0 0,1 57.98,47 Z" fill="#4ECDC4"/>
+  <path d="M32,32 L57.98,47 A30,30 0 0,1 32,62 Z" fill="#45B7D1"/>
+  <path d="M32,32 L32,62 A30,30 0 0,1 6.02,47 Z" fill="#FFEAA7"/>
+  <path d="M32,32 L6.02,47 A30,30 0 0,1 6.02,17 Z" fill="#BB8FCE"/>
+  <path d="M32,32 L6.02,17 A30,30 0 0,1 32,2 Z" fill="#82E0AA"/>
+  <!-- Segment borders -->
+  <line x1="32" y1="32" x2="32" y2="2" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  <line x1="32" y1="32" x2="57.98" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  <line x1="32" y1="32" x2="57.98" y2="47" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  <line x1="32" y1="32" x2="32" y2="62" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  <line x1="32" y1="32" x2="6.02" y2="47" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  <line x1="32" y1="32" x2="6.02" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+  <!-- Center circle -->
+  <circle cx="32" cy="32" r="7" fill="white"/>
+  <circle cx="32" cy="32" r="7" fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
+  <!-- Pointer -->
+  <polygon points="63,32 55,27.5 55,36.5" fill="#7c3aed"/>
+  <polygon points="63,32 55,27.5 55,36.5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/>
+</svg>
