@@ -18,7 +18,7 @@ Spin a wheel instantly in your browser without downloading software or creating 
 
 ### Spin a Wheel Online
 
-![Spin a Wheel Screenshot](https://spinawheel.net/)
+![Spin a Wheel Screenshot](screenshots/spin-a-wheel.png)
 
 > Visit [Spinawheel.net](https://spinawheel.net/) to try the interactive online wheel picker.
 
